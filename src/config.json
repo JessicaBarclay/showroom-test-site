@@ -53,56 +53,20 @@
         {
           "submenu": [
             {
-              "menuLabel": "All clothing",
-              "menuLink": "/shop"
+              "menuLabel": "All products",
+              "menuLink": "/products"
             },
             {
-              "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "/shop"
+              "menuLabel": "Dining room",
+              "menuLink": "/products"
             },
             {
-              "menuLabel": "jackets",
-              "menuLink": "/shop"
+              "menuLabel": "Bedroom",
+              "menuLink": "/products"
             },
             {
-              "menuLabel": "trousers",
-              "menuLink": "/shop"
-            }
-          ]
-        },
-        {
-          "submenu": [
-            {
-              "menuLabel": "All clothing",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "sweatshirts & hoodies",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "jackets",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "trousers",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "pants",
-              "menuLink": "/shop"
-            }
-          ]
-        },
-        {
-          "submenu": [
-            {
-              "menuLabel": "caps & scarves",
-              "menuLink": "/shop"
-            },
-            {
-              "menuLabel": "bags",
-              "menuLink": "/shop"
+              "menuLabel": "Art work",
+              "menuLink": "/products"
             }
           ]
         }
