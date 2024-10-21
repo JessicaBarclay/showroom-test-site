@@ -1,26 +1,9 @@
 {
-  "currencyList": [
-    { "value": "AUS", "label": "Australia (AUS $)" },
-    { "value": "CAD", "label": "Canada (CAD $)" },
-    { "value": "USD", "label": "United States (US $)" },
-    { "value": "EUR", "label": "Germany (EUR €)" },
-    { "value": "HKD", "label": "Hong Kong (HKD $)" }
-  ],
-  "languageList": [
-    { "value": "english", "label": "English" },
-    { "value": "german", "label": "Deutsch" },
-    { "value": "mandarin", "label": "普通话" }
-  ],
   "social": {
     "facebook": "https://www.facebook.com/MatterDesign/",
     "instagram": "https://www.instagram.com/p/CVwMlChIWmW",
     "twitter": "https://twitter.com/hellomatter",
     "youtube": "https://www.youtube.com/channel/UCEOu94Haa--QmltsSawflXg"
-  },
-  "paymentOptions": {
-    "visa": true,
-    "mastercard": true,
-    "amex": true
   },
   "footerLinks": [
     {
@@ -64,11 +47,10 @@
   ],
   "headerLinks": [
     {
-      "menuLabel": "Shop",
-      "menuLink": "/shop",
+      "menuLabel": "Products",
+      "menuLink": "/products",
       "category": [
         {
-          "categoryLabel": "woman",
           "submenu": [
             {
               "menuLabel": "All clothing",
@@ -89,7 +71,6 @@
           ]
         },
         {
-          "categoryLabel": "men",
           "submenu": [
             {
               "menuLabel": "All clothing",
@@ -114,7 +95,6 @@
           ]
         },
         {
-          "categoryLabel": "accessories",
           "submenu": [
             {
               "menuLabel": "caps & scarves",
@@ -137,41 +117,6 @@
       "menuLabel": "About",
       "menuLink": "/about",
       "category": null
-    }
-  ],
-  "filters": [
-    {
-      "category": "colour",
-      "items": [
-        { "name": "Black", "value": true },
-        { "name": "Green", "value": false },
-        { "name": "Dark Blue", "value": false },
-        { "name": "Blue", "value": true },
-        { "name": "Grey", "value": false },
-        { "name": "Red", "value": false }
-      ]
-    },
-
-    {
-      "category": "size",
-      "items": [
-        { "name": "XXS", "value": false },
-        { "name": "XS", "value": false },
-        { "name": "S", "value": false },
-        { "name": "M", "value": false },
-        { "name": "L", "value": false },
-        { "name": "XL", "value": false },
-        { "name": "XXL", "value": false },
-        { "name": "Onesize", "value": false }
-      ]
-    },
-    {
-      "category": "gender",
-      "items": [
-        { "name": "Male", "value": false },
-        { "name": "Female", "value": false },
-        { "name": "Unisex", "value": false }
-      ]
     }
   ]
 }
