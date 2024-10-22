@@ -12,23 +12,34 @@
   ],
   "headerLinksLeft": [
     {
-      "menuLabel": "Furniture",
-      "menuLink": "/furniture"
-    },
-    {
-      "menuLabel": "Lighting",
-      "menuLink": "/lighting"
-    },
-    {
-      "menuLabel": "Art",
-      "menuLink": "/art"
-    }
-  ],
-  "headerLinksRight": [
-    {
       "menuLabel": "Home",
       "menuLink": "/" 
     },
+    {
+      "menuLabel": "Stock List",
+      "menuLink": "/furniture",
+      "category": [
+        {
+          "categoryLabel": "",
+          "submenu": [
+            {
+              "menuLabel": "Furniture",
+              "menuLink": "/furniture"
+            },
+            {
+              "menuLabel": "Lighting",
+              "menuLink": "/lighting"
+            },
+            {
+              "menuLabel": "Art",
+              "menuLink": "/art"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "headerLinksRight": [
     {
       "menuLabel": "Contact Us",
       "menuLink": "/contact"
