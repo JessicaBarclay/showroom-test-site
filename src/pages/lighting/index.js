@@ -49,9 +49,9 @@ const LightingPage = ({ data }) => {
             visible={showFilter}
             filters={Config.filters}
           />
-          <div className={styles.productContainer}>
+          {/* <div className={styles.productContainer}>
             <ProductCardGrid data={data}></ProductCardGrid>
-          </div>
+          </div> */}
           {/* <div className={styles.loadMoreContainer}>
             <Button fullWidth level={'secondary'}>
               LOAD MORE
@@ -65,19 +65,25 @@ const LightingPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query {
-    allContentfulItem {
-      nodes {
-        slug
-        itemTitle
-        itemImage {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-        price
-        available
+query {
+  allContentfulFurniture {
+    nodes {
+      title
+      description {
+        raw
       }
+      mainImage {
+        gatsbyImageData
+      }
+      price
+      available
+      additionalImages {
+        gatsbyImageData
+      }
+      category
     }
   }
+}
 `;
 
 export default LightingPage;

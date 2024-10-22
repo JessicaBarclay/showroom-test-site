@@ -65,19 +65,25 @@ const ProductsPage = ({ data }) => {
 };
 
 export const query = graphql`
-  query {
-    allContentfulItem {
-      nodes {
-        slug
-        itemTitle
-        itemImage {
-          gatsbyImageData(layout: CONSTRAINED)
-        }
-        price
-        available
+query {
+  allContentfulFurniture {
+    nodes {
+      title
+      description {
+        raw
       }
+      mainImage {
+        gatsbyImageData
+      }
+      price
+      available
+      additionalImages {
+        gatsbyImageData
+      }
+      category
     }
   }
+}
 `;
 
 export default ProductsPage;

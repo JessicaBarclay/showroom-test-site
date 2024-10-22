@@ -11,6 +11,15 @@ import Config from '../../config.json';
 
 const FurniturePage = ({ data }) => {
   const [showFilter, setShowFilter] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState(''); // Track selected category
+
+  // Extract unique categories from the fetched data
+  const categories = Array.from(new Set(data.allContentfulFurniture.nodes.map(item => item.category)));
+
+  // Filter furniture items based on the selected category
+  const filteredFurniture = selectedCategory
+    ? data.allContentfulFurniture.nodes.filter(item => item.category === selectedCategory)
+    : data.allContentfulFurniture.nodes;
 
   useEffect(() => {
     window.addEventListener('keydown', escapeHandler);
@@ -32,52 +41,61 @@ const FurniturePage = ({ data }) => {
           name={`Furniture`}
           subtitle={'Browse our furniture options, tables, chairs, etc.'}
         />
-              {/* Banner */}
         <Container size={'large'} spacing={'min'}>
-          <div className={styles.metaContainer}>
-            <div className={styles.controllerContainer}>
-              <div
-                className={styles.iconContainer}
-                role={'presentation'}
-                onClick={() => setShowFilter(!showFilter)}
-              >
-              </div>
+          <div className={styles.pageContainer}>
+            {/* Left Column for Categories */}
+            <div className={styles.categoryList}>
+              <h3>Categories</h3>
+              <ul>
+                <li onClick={() => setSelectedCategory('')}>All</li> {/* Reset to show all items */}
+                {categories.map((category, index) => (
+                  <li
+                    key={index}
+                    onClick={() => setSelectedCategory(category)}
+                    className={selectedCategory === category ? styles.active : ''}
+                  >
+                    {category}
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
-          <CardController
-            closeFilter={() => setShowFilter(false)}
-            visible={showFilter}
-            filters={Config.filters}
-          />
-          <div className={styles.productContainer}>
-            <ProductCardGrid data={data}></ProductCardGrid>
+
+            {/* Right Column for Products */}
+            <div className={styles.productContainer}>
+              <CardController
+                closeFilter={() => setShowFilter(false)}
+                visible={showFilter}
+                filters={Config.filters}
+              />
+              <ProductCardGrid data={{ allContentfulFurniture: { nodes: filteredFurniture } }} />
+            </div>
           </div>
         </Container>
       </div>
-
     </Layout>
   );
 };
 
 export const query = graphql`
-query {
-  allContentfulFurniture {
-    nodes {
-      title
-      description {
-        raw
-      }
-      mainImage {
-        gatsbyImageData
-      }
-      price
-      available
-      additionalImages {
-        gatsbyImageData
+  query {
+    allContentfulFurniture {
+      nodes {
+        title
+        description {
+          raw
+        }
+        mainImage {
+          gatsbyImageData
+        }
+        price
+        available
+        additionalImages {
+          gatsbyImageData
+        }
+        category
       }
     }
   }
-}
 `;
 
 export default FurniturePage;
