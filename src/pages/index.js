@@ -11,7 +11,7 @@ import { navigate } from 'gatsby';
 const IndexPage = () => {
 
   const goToShop = () => {
-    navigate('/products');
+    navigate('/stock');
   };
 
   return (
@@ -39,7 +39,7 @@ const IndexPage = () => {
               We are passionate about sourcing unique Mid Century Modern furniture pieces, Objet d'Art and Contemporary Art for our clients.
               Why not call us to explore our latest stock list or sign up below to get 1st dibs on newly arrived treasures!`}
             textLink={'View our items here'}
-            link={'/products'}
+            link={'/stock'}
           />
         </Container>
       </div>

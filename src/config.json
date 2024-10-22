@@ -45,42 +45,53 @@
       ]
     }
   ],
-  "headerLinks": [
+  "headerLinksLeft": [
     {
-      "menuLabel": "Stock",
-      "menuLink": "/stock",
-      "category": [
-        {
-          "submenu": [
-            {
-              "menuLabel": "All Stock",
-              "menuLink": "/stock"
-            },
-            {
-              "menuLabel": "Dining room",
-              "menuLink": "/stock"
-            },
-            {
-              "menuLabel": "Bedroom",
-              "menuLink": "/stock"
-            },
-            {
-              "menuLabel": "Art work",
-              "menuLink": "/stock"
-            }
-          ]
-        }
-      ]
+      "menuLabel": "Dining room",
+      "menuLink": "/stock"
     },
     {
-      "menuLabel": "journal",
+      "menuLabel": "Lighting",
+      "menuLink": "/stock",
+      "category": null
+    },
+    {
+      "menuLabel": "Art",
+      "menuLink": "/stock",
+      "category": null
+    }
+  ],
+  "headerLinksRight": [
+    {
+      "menuLabel": "About",
+      "menuLink": "/about"
+    },
+    {
+      "menuLabel": "Contact Us",
       "menuLink": "/blog",
       "category": null
+    }
+  ],
+  "mobileLinks": [
+    {
+      "menuLabel": "Dining room",
+      "menuLink": "/stock"
+    },
+    {
+      "menuLabel": "Lighting",
+      "menuLink": "/stock"
+    },
+    {
+      "menuLabel": "Art",
+      "menuLink": "/stock"
     },
     {
       "menuLabel": "About",
-      "menuLink": "/about",
-      "category": null
+      "menuLink": "/about"
+    },
+    {
+      "menuLabel": "Contact Us",
+      "menuLink": "/blog"
     }
   ]
 }

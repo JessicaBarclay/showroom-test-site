@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import React, { useState, useEffect, createRef } from 'react';
+import { Link, navigate } from 'gatsby';
 
+import { isAuth } from '../../helpers/general';
 
+import AddNotification from '../AddNotification';
 import Brand from '../Brand';
 import Container from '../Container';
 import Config from '../../config.json';
 import Drawer from '../Drawer';
 import ExpandedMenu from '../ExpandedMenu';
+import FormInputField from '../FormInputField/FormInputField';
 import Icon from '../Icons/Icon';
 import MiniCart from '../MiniCart';
 import MobileNavigation from '../MobileNavigation';
@@ -62,7 +65,7 @@ const Header = (prop) => {
                 setShowMenu(false);
               }}
             >
-              {Config.headerLinks.map((navObject) => (
+              {Config.headerLinksLeft.map((navObject) => (
                 <Link
                   key={navObject.menuLink}
                   onMouseEnter={() => handleHover(navObject)}
@@ -87,11 +90,31 @@ const Header = (prop) => {
             <Icon symbol={`${mobileMenu === true ? 'cross' : 'burger'}`}></Icon>
           </div>
           <Brand />
-          <div className={styles.actionContainers}>
+          <div className={styles.linkContainer}>
+            <nav
+              role={'presentation'}
+              onMouseLeave={() => {
+                setShowMenu(false);
+              }}
+            >
+              {Config.headerLinksRight.map((navObject) => (
+                <Link
+                  key={navObject.menuLink}
+                  onMouseEnter={() => handleHover(navObject)}
+                  className={`${styles.navLink} ${
+                    activeMenu === navObject.menuLabel ? styles.activeLink : ''
+                  }`}
+                  to={navObject.menuLink}
+                >
+                  {navObject.menuLabel}
+                </Link>
+              ))}
+            </nav>
           </div>
         </div>
       </Container>
 
+      {/* menu container */}
       <div
         role={'presentation'}
         onMouseLeave={() => setShowMenu(false)}
