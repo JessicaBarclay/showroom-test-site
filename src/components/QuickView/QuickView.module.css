@@ -59,21 +59,22 @@
 .productImageContainer {
     margin-bottom: 10px;
     text-align: center;
-  }
-  
-  .mainImage {
+}
+
+.mainImage {
     width: 100%;
-    max-width: 500px; /* Limit the size of the main image */
+    max-width: 500px;
+    /* Limit the size of the main image */
     border-radius: 1px;
-  }
-  
-  .thumbnailContainer {
+}
+
+.thumbnailContainer {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-  }
-  
-  .thumbnail {
+}
+
+.thumbnail {
     width: 80px;
     height: 80px;
     margin: 0 5px;
@@ -81,16 +82,17 @@
     border: 2px solid transparent;
     border-radius: 1px;
     transition: border 0.3s ease;
-  }
-  
-  .thumbnail:hover {
+}
+
+.thumbnail:hover {
     border: 2px solid #6e6e6e;
-  }
-  
-  .activeThumbnail {
-    border: 2px solid #6e6e6e; /* Highlight the active thumbnail */
-  }
-  
+}
+
+.activeThumbnail {
+    border: 2px solid #6e6e6e;
+    /* Highlight the active thumbnail */
+}
+
 
 @media (max-width: 800px) {
     .contentContainer {
