@@ -47,26 +47,26 @@
   ],
   "headerLinks": [
     {
-      "menuLabel": "Products",
-      "menuLink": "/products",
+      "menuLabel": "Stock",
+      "menuLink": "/stock",
       "category": [
         {
           "submenu": [
             {
-              "menuLabel": "All products",
-              "menuLink": "/products"
+              "menuLabel": "All Stock",
+              "menuLink": "/stock"
             },
             {
               "menuLabel": "Dining room",
-              "menuLink": "/products"
+              "menuLink": "/stock"
             },
             {
               "menuLabel": "Bedroom",
-              "menuLink": "/products"
+              "menuLink": "/stock"
             },
             {
               "menuLabel": "Art work",
-              "menuLink": "/products"
+              "menuLink": "/stock"
             }
           ]
         }

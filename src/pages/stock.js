@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import * as styles from './products.module.css';
+import * as styles from './stock.module.css';
 
 import Banner from '../components/Banner';
 import { graphql } from 'gatsby';
 import CardController from '../components/CardController';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
-import LayoutOption from '../components/LayoutOption';
 import ProductCardGrid from '../components/ProductCardGrid';
 import Button from '../components/Button';
 import Config from '../config.json';
@@ -61,7 +60,6 @@ const ProductsPage = ({ data }) => {
         </Container>
       </div>
 
-      <LayoutOption />
     </Layout>
   );
 };
