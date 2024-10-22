@@ -6,13 +6,8 @@ import Highlight from '../components/Highlight';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from './index.module.css';
-import { navigate } from 'gatsby';
 
 const IndexPage = () => {
-
-  const goToShop = () => {
-    navigate('/stock');
-  };
 
   return (
     <Layout disablePaddingBottom>
@@ -20,19 +15,17 @@ const IndexPage = () => {
       <Hero
         maxWidth={'500px'}
         image={'/banner1.png'}
-        title={'Mid Century Modern furniture'}
+        title={'Mid Century furniture'}
         subtitle={"Objet d'Art and Contemporary Art"}
-        ctaText={'Browse items'}
-        ctaAction={goToShop}
       />
 
       {/* Highlight  */}
       <div className={styles.highlightContainer}>
         <Container size={'large'} fullMobile>
           <Highlight
-            image={'/highlight.png'}
-            altImage={'highlight image'}
-            miniImage={'/highlightmin.png'}
+            image={'/showroom2.png'}
+            altImage={'showroom2 image'}
+            miniImage={'/showroom3.png'}
             miniImageAlt={'mini highlight image'}
             title={'About us'}
             description={`

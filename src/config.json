@@ -1,11 +1,11 @@
 {
   "footerLinks": [
     {
-      "subTitle": "Info",
+      "subTitle": "Reynolds Interiors | Sturminster Newton, Dorest",
       "links": [
         {
-          "text": "About Us",
-          "link": "/about"
+          "text": "Home",
+          "link": "/"
         }
       ]
     }
@@ -26,12 +26,16 @@
   ],
   "headerLinksRight": [
     {
+      "menuLabel": "Home",
+      "menuLink": "/" 
+    },
+    {
       "menuLabel": "About",
       "menuLink": "/about"
     },
     {
       "menuLabel": "Contact Us",
-      "menuLink": "/blog"
+      "menuLink": "/contact"
     }
   ],
   "mobileLinks": [
@@ -48,12 +52,16 @@
       "menuLink": "/art"
     },
     {
+      "menuLabel": "Home",
+      "menuLink": "/" 
+    },
+    {
       "menuLabel": "About",
       "menuLink": "/about"
     },
     {
       "menuLabel": "Contact Us",
-      "menuLink": "/blog"
+      "menuLink": "/contact"
     }
   ]
 }

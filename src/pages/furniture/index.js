@@ -32,6 +32,7 @@ const FurniturePage = ({ data }) => {
           name={`Furniture`}
           subtitle={'Browse our furniture options, tables, chairs, etc.'}
         />
+              {/* Banner */}
         <Container size={'large'} spacing={'min'}>
           <div className={styles.metaContainer}>
             <div className={styles.controllerContainer}>

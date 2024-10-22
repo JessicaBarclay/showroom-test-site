@@ -52,11 +52,6 @@ const ArtPage = ({ data }) => {
           <div className={styles.productContainer}>
             <ProductCardGrid data={data}></ProductCardGrid>
           </div>
-          <div className={styles.loadMoreContainer}>
-            <Button fullWidth level={'secondary'}>
-              LOAD MORE
-            </Button>
-          </div>
         </Container>
       </div>
 
