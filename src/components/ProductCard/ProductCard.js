@@ -3,9 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import * as styles from './ProductCard.module.css';
 
 const ProductCard = ({ price, imageAlt, name, image, meta, showQuickView }) => {
-
   const productImage = getImage(image);
-  productImage ? <GatsbyImage image={productImage} alt={imageAlt} /> : <div>No image available</div>
 
   return (
     <div className={styles.root}>
@@ -15,7 +13,11 @@ const ProductCard = ({ price, imageAlt, name, image, meta, showQuickView }) => {
         onClick={showQuickView}
       >
         {/* Render the optimized image */}
-        {productImage && <GatsbyImage image={productImage} alt={imageAlt} />}
+        {productImage ? (
+          <GatsbyImage className={styles.image} image={productImage} alt={imageAlt} />
+        ) : (
+          <div className={styles.noImage}>No image available</div>
+        )}
       </div>
       <div className={styles.detailsContainer}>
         <span className={styles.productName}>{name}</span>
