@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import * as styles from './QuickView.module.css';
 import { toOptimizedImage } from '../../helpers/general';
-import CurrencyFormatter from '../CurrencyFormatter';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const QuickView = ({ product, close }) => {
-  // Move useState to the top of the component
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Early return if no product data is available
   if (!product) return null;
 
   const { title, price, mainImage, available, description, additionalImages } = product;
@@ -25,14 +22,11 @@ const QuickView = ({ product, close }) => {
     <div className={styles.root}>
       <div className={styles.titleContainer}>
         <h4>Further details</h4>
-        <button onClick={close}>Close</button>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.productContainer}>
           <span className={styles.productName}>{title}</span>
-          <div className={styles.price}>
-            <CurrencyFormatter amount={price} />
-          </div>
+          <span className={styles.price}>£{price}</span>
 
           {/* Main Image Display */}
           <div className={styles.productImageContainer}>
@@ -57,6 +51,7 @@ const QuickView = ({ product, close }) => {
           </div>
 
           {/* Render the rich text content */}
+          <br></br>
           <div className={styles.description}>
             {documentToReactComponents(JSON.parse(description.raw))}
           </div>

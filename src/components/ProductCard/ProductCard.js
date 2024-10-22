@@ -20,7 +20,7 @@ const ProductCard = ({ price, imageAlt, name, image, meta, showQuickView }) => {
       <div className={styles.detailsContainer}>
         <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>
-          <span>{price}</span>
+          <span>£{price}</span>
         </div>
         <span className={styles.meta}>{meta}</span>
       </div>
