@@ -9,9 +9,9 @@ import * as styles from './Footer.module.css';
 
 const Footer = () => {
 
-  const handleSocialClick = (platform) => {
-    window.open(Config.social[platform]);
-  };
+  // const handleSocialClick = (platform) => {
+  //   window.open(Config.social[platform]);
+  // };
 
   const renderLinks = (linkCollection) => {
     return (
@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
               );
             })}
-            <div className={styles.newsLetter}>
+            {/* <div className={styles.newsLetter}>
               <div className={styles.newsLetterContent}>
                 <div className={styles.socialContainer}>
                   {Config.social.youtube && (
@@ -101,7 +101,7 @@ const Footer = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>

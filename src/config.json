@@ -1,10 +1,4 @@
 {
-  "social": {
-    "facebook": "https://www.facebook.com/MatterDesign/",
-    "instagram": "https://www.instagram.com/p/CVwMlChIWmW",
-    "twitter": "https://twitter.com/hellomatter",
-    "youtube": "https://www.youtube.com/channel/UCEOu94Haa--QmltsSawflXg"
-  },
   "footerLinks": [
     {
       "subTitle": "Info",
@@ -12,53 +6,22 @@
         {
           "text": "About Us",
           "link": "/about"
-        },
-        {
-          "text": "Journal",
-          "link": "/blog"
-        },
-        {
-          "text": "Privacy Policy",
-          "link": "/support#policy"
-        }
-      ]
-    },
-    {
-      "subTitle": "Support",
-      "links": [
-        {
-          "text": "FAQ",
-          "link": "/faq"
-        },
-        {
-          "text": "Contact Us",
-          "link": "/support#contact"
-        },
-        {
-          "text": "Shipping & Returns",
-          "link": "/support#returns"
-        },
-        {
-          "text": "How to use this theme",
-          "link": "/how-to-use"
         }
       ]
     }
   ],
   "headerLinksLeft": [
     {
-      "menuLabel": "Dining room",
-      "menuLink": "/stock"
+      "menuLabel": "Furniture",
+      "menuLink": "/furniture"
     },
     {
       "menuLabel": "Lighting",
-      "menuLink": "/stock",
-      "category": null
+      "menuLink": "/lighting"
     },
     {
       "menuLabel": "Art",
-      "menuLink": "/stock",
-      "category": null
+      "menuLink": "/art"
     }
   ],
   "headerLinksRight": [
@@ -68,22 +31,21 @@
     },
     {
       "menuLabel": "Contact Us",
-      "menuLink": "/blog",
-      "category": null
+      "menuLink": "/blog"
     }
   ],
   "mobileLinks": [
     {
-      "menuLabel": "Dining room",
-      "menuLink": "/stock"
+      "menuLabel": "Furniture",
+      "menuLink": "/furniture"
     },
     {
       "menuLabel": "Lighting",
-      "menuLink": "/stock"
+      "menuLink": "/lighting"
     },
     {
       "menuLabel": "Art",
-      "menuLink": "/stock"
+      "menuLink": "/art"
     },
     {
       "menuLabel": "About",

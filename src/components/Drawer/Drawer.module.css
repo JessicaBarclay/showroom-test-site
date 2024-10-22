@@ -10,7 +10,7 @@
 }
 
 .overlay {
-    width: calc(100% - 540px);
+    width: calc(100% - 800px);
     background-color: var(--standard-black);
     transition: all ease-in-out 0.3s;
     position: relative;
@@ -20,7 +20,7 @@
 .content {
     position: relative;
     background-color: var(--standard-white);
-    width: 540px;
+    width: 800px;
     transition: all ease-in-out 0.3s;
     overflow-y: auto;
 }
@@ -70,7 +70,7 @@
 }
 
 .hideContent {
-    right: -540px;
+    right: -800px;
 }
 
 .showReverse {
@@ -78,7 +78,7 @@
 }
 
 .hideReverse {
-    left: -540px;
+    left: -800px;
 }
 
 .isReverse {
@@ -91,7 +91,7 @@
     }
 
     .overlay {
-        width: 10%;
+        width: 30%;
     }
 
     .iconContainer {

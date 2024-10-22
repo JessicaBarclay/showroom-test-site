@@ -7,9 +7,10 @@ import QuickView from '../QuickView';
 import Slider from '../Slider';
 
 const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = false }) => {
-  const [showQuickView, setShowQuickView] = useState(false);
+  // Update state to hold the selected product
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const products = data.allContentfulItem ? data.allContentfulItem.nodes : [];
+  const products = data.allContentfulFurniture ? data.allContentfulFurniture.nodes : [];
 
   const columnCount = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
@@ -17,19 +18,19 @@ const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = fals
 
   const renderCards = () => {
     return products.map((product, index) => {
-      const productImage = product.itemImage.gatsbyImageData;
+      const productImage = product.mainImage.gatsbyImageData;
 
       return (
         <ProductCard
           key={index}
           height={height}
           price={product.price}
-          imageAlt={product.itemTitle}
-          name={product.itemTitle}
+          imageAlt={product.title}
+          name={product.title}
           image={productImage} // Pass the gatsbyImageData field
           meta={product.available ? 'Available' : 'Out of Stock'}
-          link={`/item/${product.slug}`}
-          showQuickView={() => setShowQuickView(true)}
+          link={`/item/${product.title}-${product.price}-${product.available}`}
+          showQuickView={() => setSelectedProduct(product)} // Pass product data on click
         />
       );
     });
@@ -52,8 +53,11 @@ const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = fals
         </div>
       )}
 
-      <Drawer visible={showQuickView} close={() => setShowQuickView(false)}>
-        <QuickView close={() => setShowQuickView(false)} />
+      {/* Pass selectedProduct to QuickView */}
+      <Drawer visible={!!selectedProduct} close={() => setSelectedProduct(null)}>
+        {selectedProduct && (
+          <QuickView product={selectedProduct} close={() => setSelectedProduct(null)} />
+        )}
       </Drawer>
     </div>
   );
