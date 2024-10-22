@@ -30,12 +30,12 @@
       "menuLink": "/" 
     },
     {
-      "menuLabel": "About",
-      "menuLink": "/about"
-    },
-    {
       "menuLabel": "Contact Us",
       "menuLink": "/contact"
+    },
+    {
+      "menuLabel": "About",
+      "menuLink": "/about"
     }
   ],
   "mobileLinks": [
