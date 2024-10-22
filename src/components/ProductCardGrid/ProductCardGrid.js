@@ -6,26 +6,29 @@ import ProductCard from '../ProductCard';
 import QuickView from '../QuickView';
 import Slider from '../Slider';
 
-const ProductCardGrid = (props) => {
+const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = false }) => {
   const [showQuickView, setShowQuickView] = useState(false);
-  const { height, columns = 3, data, spacing, showSlider = false } = props;
+
+  const products = data.allContentfulItem ? data.allContentfulItem.nodes : [];
+
   const columnCount = {
     gridTemplateColumns: `repeat(${columns}, 1fr)`,
   };
 
   const renderCards = () => {
-    return data.map((product, index) => {
+    return products.map((product, index) => {
+      const productImage = product.itemImage.gatsbyImageData;
+
       return (
         <ProductCard
           key={index}
           height={height}
           price={product.price}
-          imageAlt={product.alt}
-          name={product.name}
-          image={product.image}
-          meta={product.meta}
-          originalPrice={product.originalPrice}
-          link={product.link}
+          imageAlt={product.itemTitle}
+          name={product.itemTitle}
+          image={productImage} // Pass the gatsbyImageData field
+          meta={product.available ? 'Available' : 'Out of Stock'}
+          link={`/item/${product.slug}`}
           showQuickView={() => setShowQuickView(true)}
         />
       );
@@ -40,12 +43,12 @@ const ProductCardGrid = (props) => {
         }`}
         style={columnCount}
       >
-        {data && renderCards()}
+        {products.length ? renderCards() : <p>No products available.</p>}
       </div>
 
       {showSlider === true && (
         <div className={styles.mobileSlider}>
-          <Slider spacing={spacing}>{data && renderCards()}</Slider>
+          <Slider spacing={spacing}>{renderCards()}</Slider>
         </div>
       )}
 

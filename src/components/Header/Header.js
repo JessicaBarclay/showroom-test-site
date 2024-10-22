@@ -1,15 +1,12 @@
-import React, { useState, useEffect, createRef } from 'react';
-import { Link, navigate } from 'gatsby';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 
-import { isAuth } from '../../helpers/general';
 
-import AddNotification from '../AddNotification';
 import Brand from '../Brand';
 import Container from '../Container';
 import Config from '../../config.json';
 import Drawer from '../Drawer';
 import ExpandedMenu from '../ExpandedMenu';
-import FormInputField from '../FormInputField/FormInputField';
 import Icon from '../Icons/Icon';
 import MiniCart from '../MiniCart';
 import MobileNavigation from '../MobileNavigation';

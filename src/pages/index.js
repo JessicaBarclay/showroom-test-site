@@ -1,12 +1,9 @@
 import * as React from 'react';
 
-import AttributeGrid from '../components/AttributeGrid';
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import Layout from '../components/Layout/Layout';
-
-import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
 
 import * as styles from './index.module.css';
 import { navigate } from 'gatsby';
