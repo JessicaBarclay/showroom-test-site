@@ -100,20 +100,16 @@
 
 .mapContainer {
     width: 100%;
-    /* Full width */
     max-width: 100%;
-    /* Ensure it doesn't exceed 100% */
     margin: 55px auto;
-    /* 55px margin on all sides */
     padding: 0;
 }
 
 .mapContainer iframe {
     width: 100%;
     /* Full width for the iframe */
-    height: 450px;
+    height: 750px;
     border: 0;
-    /* Remove the border */
 }
 
 @media (max-width: 800px) {
