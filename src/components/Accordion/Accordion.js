@@ -33,7 +33,7 @@ const Accordion = (props) => {
             open === true ? styles.rotate : ''
           }`}
         >
-          {icon}
+          {/* {icon} */}
         </div>
       </div>
       <div

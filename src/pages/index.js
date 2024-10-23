@@ -1,13 +1,15 @@
-import * as React from 'react';
+import React, { useRef } from 'react';
 
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import Highlight from '../components/Highlight';
 import Layout from '../components/Layout/Layout';
+import Quote from '../components/Quote';
 
 import * as styles from './index.module.css';
 
 const IndexPage = () => {
+  let historyRef = useRef();
 
   return (
     <Layout disablePaddingBottom>
@@ -18,6 +20,23 @@ const IndexPage = () => {
         title={'Mid Century furniture'}
         subtitle={"Objet d'Art and Contemporary Art"}
       />
+
+<Quote size={'large'} spacing={'min'}>
+          <div className={styles.detailContainer} ref={historyRef}>
+            <p>
+              We are passionate about sourcing unique Mid Century Modern furniture pieces, Objet d'Art and Contemporary Art for our clients. Why not call us to explore our latest stock list or sign up below to get 1st dibs on newly arrived treasures!
+            </p>
+
+            <br />
+            <br />
+
+            <p>
+              We are based in North Dorset and our 100m2 showroom is in Sherborne. We can also be regularly found at the following markets: Kempton Antiques Market, Ardingley Antiques Market, Sandown Antiques Market, So Last Century Markets in East London, and Dulwich Mid Century Modern Fair.
+            </p>
+
+
+          </div>
+        </Quote>
 
       {/* Highlight  */}
       <div className={styles.highlightContainer}>

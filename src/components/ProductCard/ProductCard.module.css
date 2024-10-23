@@ -3,6 +3,13 @@
     margin: 20px;
 }
 
+.available {
+    color: var(--grey-placeholder);
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+}
+
 .detailsContainer {
     margin-top: 16px;
 }

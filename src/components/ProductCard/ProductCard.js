@@ -15,8 +15,8 @@ const ProductCard = ({ price, imageAlt, name, image, available, showQuickView })
       <div className={styles.detailsContainer}>
         <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>
-          {/* Format the price to insert a comma. i.e. £1,999.00 */}
-          <span>£{price}</span> 
+          {/* TODO: Format the price to insert a comma. i.e. £1,999.00 */}
+          <span>£{price}.00</span> 
         </div>
         <span className={styles.available}>{available}</span>
       </div>

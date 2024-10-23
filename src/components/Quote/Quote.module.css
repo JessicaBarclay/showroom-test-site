@@ -1,4 +1,4 @@
-.root {
+/* .root {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +22,24 @@
     line-height: 52px;
     text-align: center;
     max-width: 720px;
-}
+} */
+
+.root {
+    padding: 20px;
+    color: black; /* Set a default text color */
+    font-size: 16px;
+  }
+  
+  span {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
 
 @media (max-width: 600px) {
 
