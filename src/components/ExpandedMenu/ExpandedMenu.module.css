@@ -1,7 +1,7 @@
 .root {
     display: grid;
     grid-template-columns: 5fr 5fr;
-    padding: 45px 0px;
+    padding: 10px 0px;
 }
 
 .linkContainers {
@@ -28,6 +28,7 @@
     line-height: 24px;
     text-transform: capitalize;
     margin-bottom: 14px;
+    margin-left: 80px;
     cursor: pointer;
     float:left;
     clear:left;

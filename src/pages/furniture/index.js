@@ -38,6 +38,7 @@ const FurniturePage = ({ data }) => {
         </Container>
         <Banner
           maxWidth={'650px'}
+          height={'50px'}
           name={`Furniture`}
           subtitle={'Browse our furniture options, tables, chairs, etc.'}
         />
@@ -45,7 +46,7 @@ const FurniturePage = ({ data }) => {
           <div className={styles.pageContainer}>
             {/* Left Column for Categories */}
             <div className={styles.categoryList}>
-              <h3>Categories</h3>
+              <span className={styles.categoryNameStyles}>Categories</span>
               <ul>
                 <li onClick={() => setSelectedCategory('')}>All</li> {/* Reset to show all items */}
                 {categories.map((category, index) => (

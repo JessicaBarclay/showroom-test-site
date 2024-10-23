@@ -86,6 +86,7 @@ const Header = () => {
             <Icon symbol={`${mobileMenu === true ? 'cross' : 'burger'}`}></Icon>
           </div>
           <Brand />
+          <div className={styles.linksRight}>
           <div className={styles.linkContainer}>
             <nav
               role={'presentation'}
@@ -107,6 +108,7 @@ const Header = () => {
               ))}
             </nav>
           </div>
+        </div>
         </div>
       </Container>
 

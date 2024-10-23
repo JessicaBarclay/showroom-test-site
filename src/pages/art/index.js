@@ -30,6 +30,7 @@ const ArtPage = ({ data }) => {
         </Container>
         <Banner
           maxWidth={'650px'}
+          height={'50px'}
           name={`Art`}
           subtitle={'Browse our art...'}
         />

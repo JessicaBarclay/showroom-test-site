@@ -211,6 +211,11 @@
     font-size: 9px;
 }
 
+.linksRight {
+    display: flex;
+    justify-content: flex-end; /* This moves the content to the right */
+}
+
 @media (max-width: 800px) {
     .mobileMenuContainer {
         display: block;

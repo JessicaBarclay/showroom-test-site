@@ -16,7 +16,7 @@
       "menuLink": "/" 
     },
     {
-      "menuLabel": "Stock List",
+      "menuLabel": "Stocklist",
       "menuLink": "/furniture",
       "category": [
         {
@@ -41,12 +41,12 @@
   ],
   "headerLinksRight": [
     {
-      "menuLabel": "Contact Us",
-      "menuLink": "/contact"
-    },
-    {
       "menuLabel": "About",
       "menuLink": "/about"
+    },
+    {
+      "menuLabel": "Contact Us",
+      "menuLink": "/contact"
     }
   ],
   "mobileLinks": [

@@ -30,6 +30,7 @@ const LightingPage = ({ data }) => {
         </Container>
         <Banner
           maxWidth={'650px'}
+          height={'50px'}
           name={`Lighting`}
           subtitle={'Browse our lighting room options'}
         />
