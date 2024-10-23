@@ -6,15 +6,10 @@ import ProductCard from '../ProductCard';
 import QuickView from '../QuickView';
 import Slider from '../Slider';
 
-const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = false }) => {
-  // Update state to hold the selected product
+const ProductCardGrid = ({ data, height, spacing, showSlider = false }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = data.allContentfulFurniture ? data.allContentfulFurniture.nodes : [];
-
-  const columnCount = {
-    gridTemplateColumns: `repeat(${columns}, 1fr)`,
-  };
 
   const renderCards = () => {
     return products.map((product, index) => {
@@ -27,8 +22,8 @@ const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = fals
           price={product.price}
           imageAlt={product.title}
           name={product.title}
-          image={productImage} // Pass the gatsbyImageData field
-          meta={product.available ? 'Available' : 'Out of Stock'}
+          image={productImage}
+          available={product.available ? 'Available' : 'Out of Stock'}
           link={`/item/${product.title}-${product.price}-${product.available}`}
           showQuickView={() => setSelectedProduct(product)} // Pass product data on click
         />
@@ -37,13 +32,8 @@ const ProductCardGrid = ({ data, height, columns = 3, spacing, showSlider = fals
   };
 
   return (
-    <div className={styles.root} style={columnCount}>
-      <div
-        className={`${styles.cardGrid} ${
-          showSlider === false ? styles.show : ''
-        }`}
-        style={columnCount}
-      >
+    <div className={styles.root}>
+      <div className={`${styles.cardGrid} ${showSlider === false ? styles.show : ''}`}>
         {products.length ? renderCards() : <p>No products available.</p>}
       </div>
 

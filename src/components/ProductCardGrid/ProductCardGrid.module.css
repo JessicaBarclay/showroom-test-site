@@ -1,12 +1,39 @@
+/* Base styles for the grid */
 .root {
-
+    width: 100%; /* Make sure the container uses the full width */
+    margin: 0 auto; /* Center the grid */
+    display: grid;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    overflow: hidden; /* Prevent overflow */
 }
 
+/* Responsive grid layout */
 .cardGrid {
-    width: 100%;
-    margin: 0 auto;
     display: grid;
-    gap: 56px 32px;
+    gap: 20px; /* Adds spacing between the cards */
+    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+    width: 100%; /* Ensure the grid doesn't overflow */
+}
+
+/* For tablets (iPad) */
+@media (min-width: 768px) {
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+/* For desktop */
+@media (min-width: 1024px) {
+    .cardGrid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktops */
+    }
+}
+
+/* Hover effect for product cards */
+.product-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 .mobileSlider {
@@ -16,19 +43,3 @@
 .show {
     display: grid !important;
 }
-
-@media (max-width: 800px) {
-    .mobileSlider {
-        display: block;
-    }
-
-    .cardGrid {
-        display: none;
-    }
-
-    .show {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 24px 12px;
-    }
-}
-

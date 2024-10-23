@@ -14,11 +14,18 @@ const FurniturePage = ({ data }) => {
   const [selectedCategory, setSelectedCategory] = useState(''); // Track selected category
 
   // Extract unique categories from the fetched data
-  const categories = Array.from(new Set(data.allContentfulFurniture.nodes.map(item => item.category)));
+  const categories = Array.from(
+    new Set(
+      data.allContentfulFurniture.nodes
+        .flatMap(item => item.category) // Flatten the categories into a single array
+    )
+  );
 
   // Filter furniture items based on the selected category
   const filteredFurniture = selectedCategory
-    ? data.allContentfulFurniture.nodes.filter(item => item.category === selectedCategory)
+    ? data.allContentfulFurniture.nodes.filter(item =>
+        item.category.includes(selectedCategory) // Check if the selected category exists in the item's categories
+      )
     : data.allContentfulFurniture.nodes;
 
   useEffect(() => {
@@ -34,8 +41,7 @@ const FurniturePage = ({ data }) => {
   return (
     <Layout>
       <div className={styles.root}>
-        <Container size={'large'} spacing={'min'}>
-        </Container>
+        <Container size={'large'} spacing={'min'} />
         <Banner
           maxWidth={'650px'}
           height={'50px'}
