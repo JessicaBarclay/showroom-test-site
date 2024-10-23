@@ -1,6 +1,4 @@
-.root {
-
-}
+.root {}
 
 .collectionContainer {
     margin-top: 8px;
@@ -34,7 +32,7 @@
     color: var(--standard-gold);
 }
 
-.contentTitle{
+.contentTitle {
     text-align: center;
     font-weight: normal;
     font-size: 42px;
@@ -100,6 +98,24 @@
     object-fit: cover;
 }
 
+.mapContainer {
+    width: 100%;
+    /* Full width */
+    max-width: 100%;
+    /* Ensure it doesn't exceed 100% */
+    margin: 55px auto;
+    /* 55px margin on all sides */
+    padding: 0;
+}
+
+.mapContainer iframe {
+    width: 100%;
+    /* Full width for the iframe */
+    height: 450px;
+    border: 0;
+    /* Remove the border */
+}
+
 @media (max-width: 800px) {
     .sustainableContainer {
         margin: 96px 0px 0px 0px;
@@ -111,5 +127,21 @@
 
     .highlightContainer {
         margin: 88px 0px 40px 0px;
+    }
+
+    .mapContainer {
+        width: 100%;
+        /* Full width on mobile */
+        margin-left: 0;
+        margin-right: 0;
+        margin-top:56px
+        /* Remove margin on mobile */
+    }
+
+    .mapContainer iframe {
+        width: 100%;
+        /* Full width on mobile */
+        height: 300px;
+        /* Adjust height if necessary */
     }
 }
