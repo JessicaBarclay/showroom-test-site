@@ -1,12 +1,24 @@
 .root {
     display: flex;
     justify-content: center;
+    align-items: center; /* Ensure vertical alignment if needed */
     cursor: pointer;
+}
+
+h4 {
+    text-align: center; /* Center the text inside the h4 element */
+    margin: 0; /* Remove any default margin from the h4 */
 }
 
 @media (max-width: 800px) {
     .root svg {
         width: 90px;
         height: 16.67px;
+    }
+    
+    /* Ensure the root container and text are centered on smaller screens */
+    h4 {
+        width: 100%;
+        text-align: center; /* Ensure the text is centered on mobile screens */
     }
 }
