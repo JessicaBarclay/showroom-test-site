@@ -1,5 +1,48 @@
 .root {}
 
+.contactButton{
+}
+
+.contactUs {
+    max-width: 180px;
+    width: 100%;
+    background-color: rgba(230, 230, 230, 0.675);
+    color: var(--main-font-color);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 200px;
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    /* margin: 0 auto; */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.phoneNumber {
+    text-decoration: none; /* Add underline */
+    text-decoration-color: rgb(255, 255, 255); /* Set underline color */
+    color: var(--main-font-color); /* Set text color */
+    text-decoration-thickness: 2px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the text inside the div */
+}
+
+/* General styles for the inner contact elements */
+.innerContactElement {
+    text-align: center;
+    flex: 1;
+    margin: 10px 0;
+}
+
+
 .collectionContainer {
     margin-top: 8px;
 }
@@ -113,6 +156,10 @@
 }
 
 @media (max-width: 800px) {
+    .innerContactElement {
+        margin: 10px;
+    }
+
     .sustainableContainer {
         margin: 96px 0px 0px 0px;
     }
@@ -130,8 +177,8 @@
         /* Full width on mobile */
         margin-left: 0;
         margin-right: 0;
-        margin-top:56px
-        /* Remove margin on mobile */
+        margin-top: 56px
+            /* Remove margin on mobile */
     }
 
     .mapContainer iframe {

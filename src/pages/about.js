@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import Container from '../components/Container';
+import Quote from '../components/Quote';
 import Layout from '../components/Layout/Layout';
 
 import * as styles from './about.module.css';
@@ -12,7 +12,7 @@ const AboutPage = () => {
     <Layout disablePaddingBottom>
       <div className={styles.root}>
 
-        <Container size={'large'} spacing={'min'}>
+        <Quote size={'large'} spacing={'min'}>
           <div className={styles.detailContainer} ref={historyRef}>
             <p>
               We are passionate about sourcing unique Mid Century Modern furniture pieces, Objet d'Art and Contemporary Art for our clients. Why not call us to explore our latest stock list or sign up below to get 1st dibs on newly arrived treasures!
@@ -27,7 +27,7 @@ const AboutPage = () => {
 
 
           </div>
-        </Container>
+        </Quote>
 
         <div className={styles.imageContainer}>
           <img alt={'shirt brand'} src={toOptimizedImage('/banner1.png')}></img>

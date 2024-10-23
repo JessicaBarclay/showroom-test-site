@@ -3,20 +3,24 @@ import React from 'react';
 
 import Accordion from '../Accordion';
 import Container from '../Container';
-import Icon from '../Icons/Icon';
 import Config from '../../config.json';
 import * as styles from './Footer.module.css';
 
 const Footer = () => {
 
-  // const handleSocialClick = (platform) => {
-  //   window.open(Config.social[platform]);
-  // };
-
   const renderLinks = (linkCollection) => {
+    // Check if linkCollection and linkCollection.links exist and are arrays
+    if (!linkCollection || !Array.isArray(linkCollection.links) || linkCollection.links.length === 0) {
+      return null; // Return nothing if the collection is invalid or empty
+    }
+  
     return (
       <ul className={styles.linkList}>
         {linkCollection.links.map((link, index) => {
+          // Check if each link and its fields are valid
+          if (!link || !link.text || !link.link) {
+            return null; // Skip invalid links
+          }
           return (
             <li key={index}>
               <Link className={`${styles.link} fancy`} to={link.link}>
@@ -28,7 +32,8 @@ const Footer = () => {
       </ul>
     );
   };
-
+  
+  
   return (
     <div className={styles.root}>
       <Container size={'large'} spacing={'min'}>
@@ -57,55 +62,18 @@ const Footer = () => {
                 </div>
               );
             })}
-            {/* <div className={styles.newsLetter}>
-              <div className={styles.newsLetterContent}>
-                <div className={styles.socialContainer}>
-                  {Config.social.youtube && (
-                    <div
-                      onClick={() => handleSocialClick('youtube')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'youtube'}></Icon>
-                    </div>
-                  )}
-
-                  {Config.social.instagram && (
-                    <div
-                      onClick={() => handleSocialClick('instagram')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'instagram'}></Icon>
-                    </div>
-                  )}
-
-                  {Config.social.facebook && (
-                    <div
-                      onClick={() => handleSocialClick('facebook')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'facebook'}></Icon>
-                    </div>
-                  )}
-
-                  {Config.social.twitter && (
-                    <div
-                      onClick={() => handleSocialClick('twitter')}
-                      role={'presentation'}
-                      className={styles.socialIconContainer}
-                    >
-                      <Icon symbol={'twitter'}></Icon>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div> */}
+            <div className={styles.newsLetter}>
+            </div>
           </div>
         </div>
       </Container>
       <div className={styles.contentBottomContainer}>
+        <Container size={'large'} spacing={'min'}>
+          <div className={styles.contentBottom}>
+            <div className={styles.copyrightContainer}>
+            </div>
+          </div>
+        </Container>
       </div>
     </div>
   );

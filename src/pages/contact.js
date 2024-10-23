@@ -18,18 +18,31 @@ const ContactPage = () => {
             miniImage={'/showroom5.png'}
             miniImageAlt={'mini highlight image'}
             title={'Contact us'}
-            description={`
-              Follow us in Instagram to keep up to date with where you can find us:
-@reynolds_interiors​
-
-Our new Address is: 
-    
-Unit 12, Old Yarn Mills, Westbury, Sherborne, DT9 3QZ
-                `}
-            textLink={'View our items here'}
-            link={'/furniture'}
+            description={`For all enquires you can call us on either 07766414858 or 07714704635`}
+            textLink={'find us on instagram'}
+            link={'https://www.instagram.com/reynolds_interiors/'}
           />
         </Container>
+
+        <div className={styles.innerContactElement}>
+          
+          {/* Address */}
+          <br></br>
+          <br></br>
+
+
+          <h5>Showroom</h5>
+
+          <br></br>
+
+          <p>Unit 12, Old Yarn Mills, Westbury, Sherborne, DT9 3QZ</p>
+
+          <br></br>
+    
+        </div>
+
+        {/* Phone number */}
+
         {/* Map Container */}
         <div className={styles.mapContainer}>
           <iframe

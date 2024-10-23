@@ -1,13 +1,10 @@
 {
+  "social": {
+    "instagram": "https://www.instagram.com/p/CVwMlChIWmW"
+  },
   "footerLinks": [
     {
-      "subTitle": "Reynolds Interiors | Sturminster Newton, Dorset",
-      "links": [
-        {
-          "text": "Home",
-          "link": "/"
-        }
-      ]
+      "subTitle": "Reynolds Interiors | Sturminster Newton, Dorset"
     }
   ],
   "headerLinksLeft": [
