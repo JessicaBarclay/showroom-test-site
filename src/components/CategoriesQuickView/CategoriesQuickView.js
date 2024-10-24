@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import * as styles from './CategoriesQuickView.module.css';
 
+import Icon from '../Icons/Icon';
+
 const CategoriesQuickView = ({ categories, selectedCategories, handleCategorySelection, applyFilter, close, isOpen }) => {
   const [tempSelectedCategories, setTempSelectedCategories] = useState(selectedCategories);
 
@@ -27,35 +29,46 @@ const CategoriesQuickView = ({ categories, selectedCategories, handleCategorySel
   };
 
   return (
-    <div className={`${styles.root} ${isOpen ? styles.show : ''}`}>
-      <div className={styles.titleContainer}>
-        <h4>Select Categories</h4>
-        <button className={styles.closeButton} onClick={close}>X</button>
+    <>
+      {/* Background Overlay */}
+      <div className={`${styles.overlay} ${isOpen ? styles.showOverlay : ''}`} onClick={close}>
+      <div className={styles.closeButton}>
+          <Icon symbol={'cross'}></Icon>
+        </div>
       </div>
-      <div className={styles.contentContainer}>
-        <ul className={styles.categoryList}>
-          <li>
-            <input
-              type="checkbox"
-              checked={tempSelectedCategories.length === 0}
-              onChange={() => handleTempSelection('All')}
-            />
-            <label>All</label>
-          </li>
-          {categories.map((category, index) => (
-            <li key={index}>
+
+      {/* Side panel */}
+      <div className={`${styles.root} ${isOpen ? styles.show : ''}`}>
+        <div className={styles.titleContainer}>
+        <div role={'presentation'} onClick={close}>
+      </div>
+          <h4>Select Categories</h4>
+        </div>
+        <div className={styles.contentContainer}>
+          <ul className={styles.categoryList}>
+            <li>
               <input
                 type="checkbox"
-                checked={tempSelectedCategories.includes(category)}
-                onChange={() => handleTempSelection(category)}
+                checked={tempSelectedCategories.length === 0}
+                onChange={() => handleTempSelection('All')}
               />
-              <label>{category}</label>
+              <label>All</label>
             </li>
-          ))}
-        </ul>
-        <button className={styles.applyButton} onClick={handleApply}>Apply</button>
+            {categories.map((category, index) => (
+              <li key={index}>
+                <input
+                  type="checkbox"
+                  checked={tempSelectedCategories.includes(category)}
+                  onChange={() => handleTempSelection(category)}
+                />
+                <label>{category}</label>
+              </li>
+            ))}
+          </ul>
+          <button className={styles.applyButton} onClick={handleApply}>Apply</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
