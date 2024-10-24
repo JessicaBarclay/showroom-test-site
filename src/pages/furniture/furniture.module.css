@@ -39,128 +39,55 @@
     width: 80%;
 }
 
-.root {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-.bannerContainer h2 {
-    margin-bottom: 24px;
-}
-
-.subtitleStyle {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    margin-top: 32px;
-}
-
-.metaContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-.controllerContainer {
-    display: flex;
-    gap: 48px;
-}
-
-.iconContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    cursor: pointer;
-}
-
-.iconContainer span {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-.sortContainer svg {
-    width: 8px;
-    height: 8px;
-}
-
-.itemCount {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-.chipsContainer {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.productContainer {
-    margin-top: 32px;
-}
-
-.loadMoreContainer {
-    margin-top: 80px;
-    width: 160px;
-    margin: 96px auto 0px auto;
-    text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.loadMoreContainer span {
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-.mobileItemCount {
-    display: none;
-}
-
+/* Mobile View: Hide categories list and show dropdown instead */
 @media (max-width: 800px) {
-    .itemCount {
+    .categoryList {
         display: none;
-    }
-
-    .controllerContainer {
-        gap: 0px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .mobileItemCount {
-        display: block;
-        text-align: center;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-        color: var(--grey-placeholder);
-        margin-bottom: 16px;
-    }
-
-    .metaContainer {
-        margin: 0px 8px;
+        /* Hide left-side categories on mobile */
     }
 
     .productContainer {
-        margin-left: 8px;
-        margin-right: 8px;
+        width: 100%;
     }
 
-    .breadcrumbContainer {
-        margin-top: -16px;
+    /* Mobile dropdown for categories */
+    .mobileDropdown {
+        display: block;
+        margin-bottom: 16px;
     }
 
-    .breadcrumbContainer>div {
+    .dropdownMenu {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    .dropdownItem {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .applyButton {
+        margin-top: 10px;
+        padding: 8px 12px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .applyButton:hover {
+        background-color: #0056b3;
+    }
+}
+
+/* Desktop styles for categories */
+@media (min-width: 801px) {
+    .mobileDropdown {
         display: none;
+        /* Hide the mobile dropdown on desktop */
     }
 }

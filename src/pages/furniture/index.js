@@ -11,22 +11,57 @@ import Config from '../../config.json';
 
 const FurniturePage = ({ data }) => {
   const [showFilter, setShowFilter] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(''); // Track selected category
+  const [selectedCategories, setSelectedCategories] = useState([]); // Multi-selection for mobile
+  const [selectedCategory, setSelectedCategory] = useState(''); // Single category for desktop
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown state for mobile
+  const [isMobileView, setIsMobileView] = useState(false); // Track if mobile view
 
   // Extract unique categories from the fetched data
   const categories = Array.from(
-    new Set(
-      data.allContentfulFurniture.nodes
-        .flatMap(item => item.category) // Flatten the categories into a single array
-    )
+    new Set(data.allContentfulFurniture.nodes.flatMap(item => item.category))
   );
 
-  // Filter furniture items based on the selected category
-  const filteredFurniture = selectedCategory
+  // Check if it's mobile view on initial load and window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 800);
+    };
+    handleResize(); // Check on initial load
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Filter furniture items based on the selected category (desktop) or selectedCategories (mobile)
+  const filteredFurniture = isMobileView
+    ? selectedCategories.length
+      ? data.allContentfulFurniture.nodes.filter(item =>
+          selectedCategories.some(category => item.category.includes(category))
+        )
+      : data.allContentfulFurniture.nodes
+    : selectedCategory
     ? data.allContentfulFurniture.nodes.filter(item =>
-        item.category.includes(selectedCategory) // Check if the selected category exists in the item's categories
+        item.category.includes(selectedCategory)
       )
     : data.allContentfulFurniture.nodes;
+
+  // Handle selection for mobile categories (multi-selection)
+  const handleCategorySelection = (category) => {
+    if (selectedCategories.includes(category)) {
+      setSelectedCategories(selectedCategories.filter(c => c !== category));
+    } else {
+      setSelectedCategories([...selectedCategories, category]);
+    }
+  };
+
+  // Handle selection for desktop categories (single selection)
+  const handleDesktopCategorySelection = (category) => {
+    setSelectedCategory(selectedCategory === category ? '' : category); // Toggle category selection
+  };
+
+  // Apply filter in mobile view
+  const applyFilter = () => {
+    setIsDropdownOpen(false); // Close the dropdown after applying
+  };
 
   useEffect(() => {
     window.addEventListener('keydown', escapeHandler);
@@ -48,24 +83,59 @@ const FurniturePage = ({ data }) => {
           name={`Furniture`}
           subtitle={'Browse our furniture options, tables, chairs, etc.'}
         />
+
+        {/* Mobile View Dropdown */}
+        {isMobileView && (
+          <div className={styles.mobileDropdown}>
+            <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+              Categories {isDropdownOpen ? '▲' : '▼'}
+            </button>
+            {isDropdownOpen && (
+              <div className={styles.dropdownMenu}>
+                {categories.map((category, index) => (
+                  <div key={index} className={styles.dropdownItem}>
+                    <input
+                      type="checkbox"
+                      id={`category-${index}`}
+                      checked={selectedCategories.includes(category)}
+                      onChange={() => handleCategorySelection(category)}
+                    />
+                    <label htmlFor={`category-${index}`}>{category}</label>
+                  </div>
+                ))}
+                <button className={styles.applyButton} onClick={applyFilter}>
+                  Apply
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+
         <Container size={'large'} spacing={'min'}>
           <div className={styles.pageContainer}>
-            {/* Left Column for Categories */}
-            <div className={styles.categoryList}>
-              <span className={styles.categoryNameStyles}>Categories</span>
-              <ul>
-                <li onClick={() => setSelectedCategory('')}>All</li> {/* Reset to show all items */}
-                {categories.map((category, index) => (
+            {/* Left Column for Categories (For Desktop/Wider Screens) */}
+            {!isMobileView && (
+              <div className={styles.categoryList}>
+                <span className={styles.categoryNameStyles}>Categories</span>
+                <ul>
                   <li
-                    key={index}
-                    onClick={() => setSelectedCategory(category)}
-                    className={selectedCategory === category ? styles.active : ''}
+                    onClick={() => setSelectedCategory('')}
+                    className={selectedCategory === '' ? styles.active : ''}
                   >
-                    {category}
+                    All
                   </li>
-                ))}
-              </ul>
-            </div>
+                  {categories.map((category, index) => (
+                    <li
+                      key={index}
+                      onClick={() => handleDesktopCategorySelection(category)}
+                      className={selectedCategory === category ? styles.active : ''}
+                    >
+                      {category}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Right Column for Products */}
             <div className={styles.productContainer}>
