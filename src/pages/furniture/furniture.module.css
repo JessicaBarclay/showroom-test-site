@@ -3,6 +3,58 @@
     flex-direction: column;
 }
 
+.categoriesButtonContainer {
+    display: flex;
+    justify-content: center;
+    /* Center the button horizontally */
+    width: 100%;
+    /* Make sure the container takes the full width */
+}
+
+.categoriesButton {
+    background-color: white;
+    /* White background */
+    border: 1px solid #ccc;
+    /* Fine grey border */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    /* Padding for size */
+    width: 100%;
+    /* Set to match ProductCard width */
+    max-width: 300px;
+    /* Adjust this to match ProductCard width */
+    display: flex;
+    /* Align items horizontally */
+    justify-content: space-between;
+    /* Space between text and chevron */
+    align-items: center;
+    /* Vertically center content */
+    font-size: 16px;
+    /* Adjust font size */
+    cursor: pointer;
+    /* Show pointer on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+    margin: 0 auto;
+    /* Center the button itself */
+}
+
+/* Optional: Add hover effect */
+.categoriesButton:hover {
+    background-color: #f5f5f5;
+    /* Slight background change on hover */
+}
+
+/* Chevron styling */
+.chevronDown {
+    width: 12px;
+    height: 12px;
+    margin-left: 10px;
+    fill: #888;
+    /* Grey chevron color */
+}
+
 .pageContainer {
     display: flex;
 }
@@ -15,7 +67,8 @@
 .categoryList ul {
     list-style: none;
     margin-top: 12px;
-    border-top: 1px solid #e0e0e0; /* Creates a 1px gray underline */
+    border-top: 1px solid #e0e0e0;
+    /* Creates a 1px gray underline */
 }
 
 .categoryList li {

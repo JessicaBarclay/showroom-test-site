@@ -83,8 +83,12 @@ const FurniturePage = ({ data }) => {
 
         {/* Mobile View - Open the Categories Side View */}
         {isMobileView && (
-          <button onClick={() => setIsDropdownOpen(true)}>
+          <button className={styles.categoriesButton} onClick={() => setIsDropdownOpen(true)}>
             Categories
+            {/* Chevron pointing down */}
+            <svg className={styles.chevronDown} viewBox="0 0 24 24">
+              <path d="M7 10l5 5 5-5z" />
+            </svg>
           </button>
         )}
 
