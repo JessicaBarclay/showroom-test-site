@@ -102,11 +102,9 @@
     background-color: #444;
 }
 
-
 .categoryList li {
-    /* display: flex; */
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* This will align checkbox and text side by side */
+    align-items: center; /* Center the checkbox and label vertically */
     padding: 12px 0;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -114,4 +112,19 @@
 /* Checkbox styling */
 .categoryList input[type='checkbox'] {
     margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #636363;
+    background-color: white; 
+    cursor: pointer;
+    position: relative;
+    border-radius: 3px;
+    appearance: none;
 }
+
+/* When the checkbox is checked */
+.categoryList input[type='checkbox']:checked {
+    background-color: #636363;
+    border: 1px solid #636363;
+}
+
