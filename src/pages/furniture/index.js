@@ -7,6 +7,7 @@ import CardController from '../../components/CardController';
 import Container from '../../components/Container';
 import Layout from '../../components/Layout';
 import ProductCardGrid from '../../components/ProductCardGrid';
+import CategoriesQuickView from '../../components/CategoriesQuickView';
 import Config from '../../config.json';
 
 const FurniturePage = ({ data }) => {
@@ -35,24 +36,18 @@ const FurniturePage = ({ data }) => {
   const filteredFurniture = isMobileView
     ? selectedCategories.length
       ? data.allContentfulFurniture.nodes.filter(item =>
-          selectedCategories.some(category => item.category.includes(category))
-        )
+        selectedCategories.some(category => item.category.includes(category))
+      )
       : data.allContentfulFurniture.nodes
     : selectedCategory
-    ? data.allContentfulFurniture.nodes.filter(item =>
+      ? data.allContentfulFurniture.nodes.filter(item =>
         item.category.includes(selectedCategory)
       )
-    : data.allContentfulFurniture.nodes;
+      : data.allContentfulFurniture.nodes;
 
   // Handle selection for mobile categories (multi-selection)
-  const handleCategorySelection = (category) => {
-    if (category === 'All') {
-      setSelectedCategories([]); // Clear all selections when 'All' is clicked
-    } else if (selectedCategories.includes(category)) {
-      setSelectedCategories(selectedCategories.filter(c => c !== category));
-    } else {
-      setSelectedCategories([...selectedCategories, category]);
-    }
+  const handleCategorySelection = (tempSelectedCategories) => {
+    setSelectedCategories(tempSelectedCategories); // Properly update the final state
   };
 
   // Handle selection for desktop categories (single selection)
@@ -86,40 +81,23 @@ const FurniturePage = ({ data }) => {
           subtitle={'Browse our furniture options, tables, chairs, etc.'}
         />
 
-        {/* Mobile View Dropdown */}
+        {/* Mobile View - Open the Categories Side View */}
         {isMobileView && (
-          <div className={styles.mobileDropdown}>
-            <button onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-              Categories {isDropdownOpen ? '▲' : '▼'}
-            </button>
-            {isDropdownOpen && (
-              <div className={styles.dropdownMenu}>
-                <div className={styles.dropdownItem}>
-                  <input
-                    type="checkbox"
-                    id="category-all"
-                    checked={selectedCategories.length === 0}
-                    onChange={() => handleCategorySelection('All')}
-                  />
-                  <label htmlFor="category-all">All</label>
-                </div>
-                {categories.map((category, index) => (
-                  <div key={index} className={styles.dropdownItem}>
-                    <input
-                      type="checkbox"
-                      id={`category-${index}`}
-                      checked={selectedCategories.includes(category)}
-                      onChange={() => handleCategorySelection(category)}
-                    />
-                    <label htmlFor={`category-${index}`}>{category}</label>
-                  </div>
-                ))}
-                <button className={styles.applyButton} onClick={applyFilter}>
-                  Apply
-                </button>
-              </div>
-            )}
-          </div>
+          <button onClick={() => setIsDropdownOpen(true)}>
+            Categories
+          </button>
+        )}
+
+        {/* CategoriesQuickView Side Panel */}
+        {isMobileView && (
+          <CategoriesQuickView
+            categories={categories}
+            selectedCategories={selectedCategories}
+            handleCategorySelection={handleCategorySelection} // Pass current selection handler
+            applyFilter={applyFilter} // Finalize selection on Apply
+            close={() => setIsDropdownOpen(false)}
+            isOpen={isDropdownOpen} // Control visibility of the side panel
+          />
         )}
 
         <Container size={'large'} spacing={'min'}>
