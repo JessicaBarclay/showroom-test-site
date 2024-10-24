@@ -35,7 +35,36 @@
 .price span {
     font-weight: 500;
     font-size: 14px;
-    line-height: 17px;
+    line-height: 19px;
+}
+
+.available {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px; 
+}
+
+.price{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px; 
+}
+
+.descriptionTitle {
+    font-weight: 600;
+    display: inline; /* Make the title inline so it aligns next to the description */
+    margin-right: 10px; /* Add spacing between the title and content */
+}
+
+.descriptionContent {
+    display: inline; /* Ensure content is inline with the title */
+    margin: 0; /* Remove default paragraph margin */
+}
+
+.descriptionContainer {
+    text-align: left; /* Ensure the text aligns to the left */
+    margin-top: 16px; /* Add spacing above the description */
+    line-height: 1.6; /* Adjust line height for readability */
 }
 
 .productImageContainer {

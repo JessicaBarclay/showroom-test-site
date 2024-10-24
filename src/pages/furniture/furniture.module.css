@@ -46,6 +46,10 @@
     /* Slight background change on hover */
 }
 
+.categoryNameStyles {
+    font-weight: 300;
+}
+
 /* Chevron styling */
 .chevronDown {
     width: 12px;

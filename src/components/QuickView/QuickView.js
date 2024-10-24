@@ -3,7 +3,7 @@ import * as styles from './QuickView.module.css';
 import { toOptimizedImage } from '../../helpers/general';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const QuickView = ({ product, close }) => {
+const QuickView = ({ product }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!product) return null;
@@ -26,7 +26,8 @@ const QuickView = ({ product, close }) => {
       <div className={styles.contentContainer}>
         <div className={styles.productContainer}>
           <span className={styles.productName}>{title}</span>
-          <span className={styles.price}>£{price}</span>
+          <span className={styles.price}>£{price}.00</span>
+          <p className={styles.available}>{available ? 'Available' : 'Out of Stock'}</p>
 
           {/* Main Image Display */}
           <div className={styles.productImageContainer}>
@@ -52,11 +53,12 @@ const QuickView = ({ product, close }) => {
 
           {/* Render the rich text content */}
           <br></br>
-          <div className={styles.description}>
-            {documentToReactComponents(JSON.parse(description.raw))}
+          <div className={styles.descriptionContainer}>
+            <p className={styles.descriptionTitle}>Description</p>
+            <p className={styles.descriptionContent}>
+              {documentToReactComponents(JSON.parse(description.raw))}
+            </p>
           </div>
-
-          <p>{available ? 'Available' : 'Out of Stock'}</p>
         </div>
       </div>
     </div>
