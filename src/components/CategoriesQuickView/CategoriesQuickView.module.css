@@ -82,3 +82,36 @@
     z-index: 10000; /* Ensure it appears above other elements */
     position: relative; /* Position it properly inside the container */
 }
+
+/* Apply button styling */
+.applyButton {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: #636363;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.applyButton:hover {
+    background-color: #444;
+}
+
+
+.categoryList li {
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Checkbox styling */
+.categoryList input[type='checkbox'] {
+    margin-right: 10px;
+}
