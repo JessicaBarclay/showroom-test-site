@@ -46,7 +46,9 @@ const FurniturePage = ({ data }) => {
 
   // Handle selection for mobile categories (multi-selection)
   const handleCategorySelection = (category) => {
-    if (selectedCategories.includes(category)) {
+    if (category === 'All') {
+      setSelectedCategories([]); // Clear all selections when 'All' is clicked
+    } else if (selectedCategories.includes(category)) {
       setSelectedCategories(selectedCategories.filter(c => c !== category));
     } else {
       setSelectedCategories([...selectedCategories, category]);
@@ -92,6 +94,15 @@ const FurniturePage = ({ data }) => {
             </button>
             {isDropdownOpen && (
               <div className={styles.dropdownMenu}>
+                <div className={styles.dropdownItem}>
+                  <input
+                    type="checkbox"
+                    id="category-all"
+                    checked={selectedCategories.length === 0}
+                    onChange={() => handleCategorySelection('All')}
+                  />
+                  <label htmlFor="category-all">All</label>
+                </div>
                 {categories.map((category, index) => (
                   <div key={index} className={styles.dropdownItem}>
                     <input
