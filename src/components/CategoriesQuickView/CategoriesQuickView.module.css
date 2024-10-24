@@ -40,10 +40,15 @@
 
 /* Title container to align the close button and title */
 .titleContainer {
-    display: flex;
-    justify-content: flex-start; /* Ensure the close button is on the left */
-    padding: 16px;
-    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 32px 0px 36px 0px;
+    margin: 0px 16px 16px 16px;
+    border-bottom: 1px solid var(--bg-light-gray);
+}
+
+.titleContainer h4 {
+    font-weight: normal;
+    line-height: 16px;
 }
 
 /* Styling for the Close Button */

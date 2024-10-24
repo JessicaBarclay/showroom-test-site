@@ -41,7 +41,7 @@ const CategoriesQuickView = ({ categories, selectedCategories, handleCategorySel
       <div className={`${styles.root} ${isOpen ? styles.show : ''}`}>
         <div className={styles.titleContainer}>
         <div role={'presentation'} onClick={close}>
-      </div>
+        </div>
           <h4>Select Categories</h4>
         </div>
         <div className={styles.contentContainer}>
