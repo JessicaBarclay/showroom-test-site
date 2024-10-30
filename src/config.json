@@ -1,6 +1,6 @@
 {
   "social": {
-    "instagram": "https://www.instagram.com/p/CVwMlChIWmW"
+    "instagram": "https://www.instagram.com/reynolds_interiors/"
   },
   "footerLinks": [
     {
@@ -8,68 +8,15 @@
     }
   ],
   "headerLinksLeft": [
-    {
-      "menuLabel": "Home",
-      "menuLink": "/" 
-    },
-    {
-      "menuLabel": "Stocklist",
-      "menuLink": "/furniture",
-      "category": [
-        {
-          "categoryLabel": "",
-          "submenu": [
-            {
-              "menuLabel": "Furniture",
-              "menuLink": "/furniture"
-            },
-            {
-              "menuLabel": "Lighting",
-              "menuLink": "/lighting"
-            },
-            {
-              "menuLabel": "Art",
-              "menuLink": "/art"
-            }
-          ]
-        }
-      ]
-    }
+
   ],
   "headerLinksRight": [
-    {
-      "menuLabel": "About",
-      "menuLink": "/about"
-    },
-    {
-      "menuLabel": "Contact Us",
-      "menuLink": "/contact"
-    }
+
   ],
   "mobileLinks": [
     {
-      "menuLabel": "Furniture",
-      "menuLink": "/furniture"
-    },
-    {
-      "menuLabel": "Lighting",
-      "menuLink": "/lighting"
-    },
-    {
-      "menuLabel": "Art",
-      "menuLink": "/art"
-    },
-    {
       "menuLabel": "Home",
-      "menuLink": "/" 
-    },
-    {
-      "menuLabel": "About",
-      "menuLink": "/about"
-    },
-    {
-      "menuLabel": "Contact Us",
-      "menuLink": "/contact"
+      "menuLink": "/"
     }
   ]
 }

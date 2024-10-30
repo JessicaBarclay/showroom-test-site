@@ -19,7 +19,7 @@ const Header = () => {
   const [menu, setMenu] = useState();
   const [activeMenu, setActiveMenu] = useState();
 
-  const bannerMessage = 'Visit our showroom in North Dorset';
+  const bannerMessage = 'Visit our new showroom in Sherborne, North Dorset!';
 
   const handleHover = (navObject) => {
     if (navObject.category) {

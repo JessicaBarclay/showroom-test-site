@@ -47,11 +47,12 @@ const IndexPage = () => {
             miniImage={'/showroom3.png'}
             miniImageAlt={'mini highlight image'}
             title={'About us'}
-            description={`
-              We are passionate about sourcing unique Mid Century Modern furniture pieces, Objet d'Art and Contemporary Art for our clients.
-              Why not call us to explore our latest stock list or sign up below to get 1st dibs on newly arrived treasures!`}
-            textLink={'View our stocklist'}
-            link={'/furniture'}
+            descriptionOne={`We are passionate about sourcing unique Mid Century Modern furniture pieces, Objet d'Art and Contemporary Art for our clients.`}
+            descriptionTwo={`Why not call us to explore our latest stock list or sign up below to get 1st dibs on newly arrived treasures!
+              We are based in North Dorset  and our 100m2 showroom is in Sherborne.
+              We can also be regularly found at the following markets:`}
+            listOfPlaces={`Kempton Antiques Market,Ardingley Antiques Market,Sandown Antiques Market,So Last Century Markets in East London,Dulwich Mid Century Modern Fair.`}
+            descriptionThree={`Follow us on Instagram to keep up to date with where you can find us: @reynolds_interiors.​ Our new Address is: Unit 12, Old Yarn Mills, Westbury, Sherborne, DT9 3QZ`}
           />
         </Container>
       </div>

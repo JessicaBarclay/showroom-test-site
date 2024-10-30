@@ -96,3 +96,9 @@
         flex-direction: column-reverse;
     }
 }
+.placesList {
+    font-weight: 600; /* Makes the text bold */
+    margin: 20; /* Adjusts margin as needed */
+    padding: 20; /* Adjusts padding as needed */
+    padding-left: 20px; /* Adds indentation for bullets */
+  }
