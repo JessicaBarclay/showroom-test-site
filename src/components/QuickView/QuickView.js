@@ -21,11 +21,10 @@ const QuickView = ({ product }) => {
   return (
     <div className={styles.root}>
       <div className={styles.titleContainer}>
-        <h4>Further details</h4>
+        <h4>{title}</h4>
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.productContainer}>
-          <span className={styles.productName}>{title}</span>
           <span className={styles.price}>£{price}.00</span>
           <p className={styles.available}>{available ? 'Available' : 'Out of Stock'}</p>
 
@@ -59,6 +58,10 @@ const QuickView = ({ product }) => {
               {documentToReactComponents(JSON.parse(description.raw))}
             </p>
           </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
         </div>
       </div>
     </div>
