@@ -9,7 +9,6 @@ import Layout from '../../components/Layout';
 import ProductCardGrid from '../../components/ProductCardGrid';
 import Config from '../../config.json';
 
-
 const LightingPage = ({ data }) => {
   const [showFilter, setShowFilter] = useState(false);
 
@@ -26,8 +25,7 @@ const LightingPage = ({ data }) => {
   return (
     <Layout>
       <div className={styles.root}>
-        <Container size={'large'} spacing={'min'}>
-        </Container>
+        <Container size={'large'} spacing={'min'} />
         <Banner
           maxWidth={'650px'}
           height={'50px'}
@@ -41,8 +39,7 @@ const LightingPage = ({ data }) => {
                 className={styles.iconContainer}
                 role={'presentation'}
                 onClick={() => setShowFilter(!showFilter)}
-              >
-              </div>
+              ></div>
             </div>
           </div>
           <CardController
@@ -50,41 +47,34 @@ const LightingPage = ({ data }) => {
             visible={showFilter}
             filters={Config.filters}
           />
-          {/* <div className={styles.productContainer}>
-            <ProductCardGrid data={data}></ProductCardGrid>
-          </div> */}
-          {/* <div className={styles.loadMoreContainer}>
-            <Button fullWidth level={'secondary'}>
-              LOAD MORE
-            </Button>
-          </div> */}
+          <div className={styles.productContainer}>
+          <ProductCardGrid data={{ nodes: data.allContentfulLighting.nodes }} />
+          </div>
         </Container>
       </div>
-
     </Layout>
   );
 };
 
 export const query = graphql`
-query {
-  allContentfulFurniture {
-    nodes {
-      title
-      description {
-        raw
+  query {
+    allContentfulLighting {
+      nodes {
+        title
+        description {
+          raw
+        }
+        mainImage {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
+        price
+        available
+        additionalImages {
+          gatsbyImageData(layout: CONSTRAINED)
+        }
       }
-      mainImage {
-        gatsbyImageData
-      }
-      price
-      available
-      additionalImages {
-        gatsbyImageData
-      }
-      category
     }
   }
-}
 `;
 
 export default LightingPage;

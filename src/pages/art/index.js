@@ -7,7 +7,6 @@ import CardController from '../../components/CardController';
 import Container from '../../components/Container';
 import Layout from '../../components/Layout';
 import ProductCardGrid from '../../components/ProductCardGrid';
-import Button from '../../components/Button';
 import Config from '../../config.json';
 
 const ArtPage = ({ data }) => {
@@ -32,7 +31,7 @@ const ArtPage = ({ data }) => {
           maxWidth={'650px'}
           height={'50px'}
           name={`Art`}
-          subtitle={'Browse our art...'}
+          subtitle={'Browse our Art'}
         />
         <Container size={'large'} spacing={'min'}>
           <div className={styles.metaContainer}>
@@ -50,9 +49,7 @@ const ArtPage = ({ data }) => {
             visible={showFilter}
             filters={Config.filters}
           />
-          {/* <div className={styles.productContainer}>
-            <ProductCardGrid data={data}></ProductCardGrid>
-          </div> */}
+        <ProductCardGrid data={{ nodes: data.allContentfulArt.nodes }} />
         </Container>
       </div>
 
@@ -61,25 +58,25 @@ const ArtPage = ({ data }) => {
 };
 
 export const query = graphql`
-query {
-  allContentfulFurniture {
-    nodes {
-      title
-      description {
-        raw
+  query {
+    allContentfulArt {
+      nodes {
+        title
+        description {
+          raw
+        }
+        mainImage {
+          gatsbyImageData
+        }
+        price
+        available
+        additionalImages {
+          gatsbyImageData
+        }
       }
-      mainImage {
-        gatsbyImageData
-      }
-      price
-      available
-      additionalImages {
-        gatsbyImageData
-      }
-      category
     }
   }
-}
 `;
+
 
 export default ArtPage;

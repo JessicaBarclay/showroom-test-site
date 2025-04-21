@@ -9,7 +9,7 @@
   ],
   "headerLinksLeft": [
     {
-      "menuLabel": "Home",
+      "menuLabel": "About",
       "menuLink": "/" 
     },
     {
@@ -38,15 +38,19 @@
   ],
   "headerLinksRight": [
     {
-      "menuLabel": "About",
-      "menuLink": "/about"
-    },
-    {
       "menuLabel": "Contact Us",
       "menuLink": "/contact"
     }
   ],
   "mobileLinks": [
+    {
+      "menuLabel": "About",
+      "menuLink": "/" 
+    },
+    {
+      "menuLabel": "Contact Us",
+      "menuLink": "/contact"
+    },
     {
       "menuLabel": "Furniture",
       "menuLink": "/furniture"
@@ -58,18 +62,6 @@
     {
       "menuLabel": "Art",
       "menuLink": "/art"
-    },
-    {
-      "menuLabel": "Home",
-      "menuLink": "/" 
-    },
-    {
-      "menuLabel": "About",
-      "menuLink": "/about"
-    },
-    {
-      "menuLabel": "Contact Us",
-      "menuLink": "/contact"
     }
   ]
 }
