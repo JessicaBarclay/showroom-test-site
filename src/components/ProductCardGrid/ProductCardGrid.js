@@ -9,7 +9,13 @@ import Slider from '../Slider';
 const ProductCardGrid = ({ data, height, spacing, showSlider = false }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  const products = data.nodes || [];
+  const products =
+  data.nodes ||
+  data.allContentfulFurniture?.nodes ||
+  data.allContentfulLighting?.nodes ||
+  data.allContentfulArt?.nodes ||
+  [];
+
 
   const renderCards = () => {
     return products.map((product, index) => {

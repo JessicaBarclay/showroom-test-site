@@ -137,7 +137,7 @@ const FurniturePage = ({ data }) => {
                 visible={showFilter}
                 filters={Config.filters}
               />
-              <ProductCardGrid data={{ nodes: data.allContentfulFurniture.nodes }} />
+              <ProductCardGrid data={{ allContentfulFurniture: { nodes: filteredFurniture } }} />
             </div>
           </div>
         </Container>
