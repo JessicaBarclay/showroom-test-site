@@ -30,6 +30,10 @@
             {
               "menuLabel": "Art",
               "menuLink": "/art"
+            },
+            {
+              "menuLabel": "Ceramics & Glass",
+              "menuLink": "/ceramics"
             }
           ]
         }
@@ -62,6 +66,10 @@
     {
       "menuLabel": "Art",
       "menuLink": "/art"
+    },
+    {
+      "menuLabel": "Ceramics & Glass",
+      "menuLink": "/ceramics"
     }
   ]
 }
