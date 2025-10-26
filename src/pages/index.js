@@ -17,8 +17,9 @@ const IndexPage = () => {
       <Hero
         maxWidth={'500px'}
         image={'/banner1.png'}
-        title={'Mid Century furniture'}
-        subtitle={"Objet d'Art and Contemporary Art"}
+        altImage={'furniture showroom image retro vintage art chair table painting ceramics'}
+        title={''}
+        subtitle={""}
       />
 
 <Quote size={'large'} spacing={'min'}>
@@ -38,13 +39,12 @@ const IndexPage = () => {
           </div>
         </Quote>
 
-      {/* Highlight  */}
       <div className={styles.highlightContainer}>
         <Container size={'large'} fullMobile>
           <Highlight
-            image={'/showroom2.png'}
-            altImage={'showroom2 image'}
-            miniImage={'/showroom3.png'}
+            image={'/table-home-page.png'}
+            altImage={'furniture showroom image retro vintage art chair table'}
+            miniImage={'/home-hall.png'}
             miniImageAlt={'mini highlight image'}
             title={'About us'}
             descriptionOne={`We are passionate about sourcing unique Mid Century Modern furniture pieces, Objet d'Art and Contemporary Art for our clients.`}
@@ -56,9 +56,6 @@ const IndexPage = () => {
           />
         </Container>
       </div>
-
-      {/* Social Media */}
-      {/* <AttributeGrid /> */}
     </Layout>
   );
 };

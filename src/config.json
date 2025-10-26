@@ -8,15 +8,25 @@
     }
   ],
   "headerLinksLeft": [
-
+    {
+      "menuLabel": "About",
+      "menuLink": "/" 
+    },
+        {
+      "menuLabel": "Contact Us",
+      "menuLink": "/contact"
+    }
   ],
   "headerLinksRight": [
-
   ],
   "mobileLinks": [
     {
-      "menuLabel": "Home",
-      "menuLink": "/"
+      "menuLabel": "About",
+      "menuLink": "/" 
+    },
+    {
+      "menuLabel": "Contact Us",
+      "menuLink": "/contact"
     }
   ]
 }

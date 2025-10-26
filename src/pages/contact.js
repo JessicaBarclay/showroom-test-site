@@ -13,10 +13,10 @@ const ContactPage = () => {
       <div className={styles.highlightContainer}>
         <Container size={'large'} fullMobile>
           <Highlight
-            image={'/showroom4.png'}
-            altImage={'highlight image'}
-            miniImage={'/showroom5.png'}
-            miniImageAlt={'mini highlight image'}
+            image={'/square-chairs.png'}
+            altImage={'chairs and sideboard furniture showroom image retro vintage art'}
+            miniImage={'/square-side-board.png'}
+            miniImageAlt={'sideboard retro furniture wood leather chairs'}
             title={'Contact us'}
             description={`For all enquires you can call us on either 07766414858 or 07714704635`}
             textLink={'find us on instagram'}
